@@ -46,14 +46,17 @@ public class Oauth2Config {
     public OAuth2ProtectedResourceDetails google() {
         AuthorizationCodeResourceDetails details = new AuthorizationCodeResourceDetails();
         details.setId("google");
-        details.setClientId("<id>");
-        details.setClientSecret("<secret>");
+        details.setClientId("456020640878-2p8pqf8jh024i49hrb53ffcsl2tvgngb.apps.googleusercontent.com");
+        details.setClientSecret("WVO1rSOpGUTbKGyssJvNwHqp");
         //details.setClientSecret("<secret>");
         details.setAccessTokenUri("https://accounts.google.com/o/oauth2/token");
         details.setUserAuthorizationUri("https://accounts.google.com/o/oauth2/auth");
         details.setPreEstablishedRedirectUri("http://localhost:8080/google");
         final ArrayList<String> scope = new ArrayList<String>();
-        scope.add("https://www.googleapis.com/auth/calendar");
+        //scope.add("https://www.googleapis.com/auth/calendar");
+        scope.add("https://www.googleapis.com/auth/drive.file");
+        scope.add("https://www.googleapis.com/auth/userinfo.email");
+        scope.add("https://www.googleapis.com/auth/userinfo.profile");
         details.setScope(scope);
 
         details.setTokenName("oauth_token");

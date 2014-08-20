@@ -1,4 +1,4 @@
-package com.borabora.googgleapi.model.calendar;
+package com.borabora.googleapi.model.calendar;
 
 /**
  * Borabora Systems

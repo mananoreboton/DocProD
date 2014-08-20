@@ -1,7 +1,7 @@
 package com.borabora.drivedocprocessor.controller;
 
-import com.borabora.googgleapi.model.calendar.CalendarList;
-import com.borabora.googgleapi.model.calendar.Item;
+import com.borabora.googleapi.model.drive.FileList;
+import com.borabora.googleapi.model.drive.Item;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,17 +26,26 @@ public class GoogleController {
     public String calendar(Map<String, Object> model) throws Exception {
         final ArrayList<String> summaries = new ArrayList<String>();
 
-        String dataUri = "https://www.googleapis.com/calendar/v3/users/me/calendarList?minAccessRole=writer";
-        String info = googleRestTemplate.getForObject(dataUri, String.class);
+        //String dataUri = "https://www.googleapis.com/calendar/v3/users/me/calendarList?minAccessRole=writer";
+        //String info = googleRestTemplate.getForObject(dataUri, String.class);
 
-        ObjectMapper mapper = new ObjectMapper();
+        /*ObjectMapper mapper = new ObjectMapper();
         CalendarList calendarList = mapper.readValue(info, CalendarList.class);
         final List<Item> items = calendarList.getItems();
         for (int i = 0; i < items.size(); i++) {
             Item item = items.get(i);
             summaries.add(item.getSummary());
+        }*/
+        String docdataFilter = "?q=title+contains+'source'";
+        String docDataUri = "https://www.googleapis.com/drive/v2/files" + docdataFilter;
+        String docInfo = googleRestTemplate.getForObject(docDataUri, String.class);
+        ObjectMapper mapper = new ObjectMapper();
+        FileList calendarList = mapper.readValue(docInfo, FileList.class);
+        List<Item> items = calendarList.getItems();
+        for (int i = 0; i < items.size(); i++) {
+            Item item = items.get(i);
+            summaries.add(item.getTitle());
         }
-
 
         model.put("summaries", summaries);
         return "google";

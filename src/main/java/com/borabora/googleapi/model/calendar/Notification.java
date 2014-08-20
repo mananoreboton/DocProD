@@ -1,4 +1,4 @@
-package com.borabora.googgleapi.model.calendar;
+package com.borabora.googleapi.model.calendar;
 
 /**
  * Borabora Systems
@@ -14,17 +14,27 @@ import java.util.Map;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
 @JsonPropertyOrder({
-        "method",
-        "minutes"
+        "type",
+        "method"
 })
-public class DefaultReminder {
+public class Notification {
 
+    @JsonProperty("type")
+    private String type;
     @JsonProperty("method")
     private String method;
-    @JsonProperty("minutes")
-    private Integer minutes;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
+    @JsonProperty("type")
+    public String getType() {
+        return type;
+    }
+
+    @JsonProperty("type")
+    public void setType(String type) {
+        this.type = type;
+    }
 
     @JsonProperty("method")
     public String getMethod() {
@@ -34,16 +44,6 @@ public class DefaultReminder {
     @JsonProperty("method")
     public void setMethod(String method) {
         this.method = method;
-    }
-
-    @JsonProperty("minutes")
-    public Integer getMinutes() {
-        return minutes;
-    }
-
-    @JsonProperty("minutes")
-    public void setMinutes(Integer minutes) {
-        this.minutes = minutes;
     }
 
     @JsonAnyGetter
