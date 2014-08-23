@@ -1,13 +1,16 @@
-package com.borabora.googleapi.model.drive;
+package com.borabora.googleapi.model.calendar;
 
 /**
- * Created by epauser on 20/08/14.
+ * Borabora Systems
+ * Created by mananoreboton on 19/08/14.
  */
 
 import com.fasterxml.jackson.annotation.*;
 
 import javax.annotation.Generated;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -15,25 +18,19 @@ import java.util.Map;
 @JsonPropertyOrder({
         "kind",
         "etag",
-        "id",
-        "selfLink",
-        "role",
-        "type"
+        "nextSyncToken",
+        "items"
 })
-public class UserPermission {
+public class CalendarList {
 
     @JsonProperty("kind")
     private String kind;
     @JsonProperty("etag")
     private String etag;
-    @JsonProperty("id")
-    private String id;
-    @JsonProperty("selfLink")
-    private String selfLink;
-    @JsonProperty("role")
-    private String role;
-    @JsonProperty("type")
-    private String type;
+    @JsonProperty("nextSyncToken")
+    private String nextSyncToken;
+    @JsonProperty("items")
+    private List<Item> items = new ArrayList<Item>();
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -57,44 +54,24 @@ public class UserPermission {
         this.etag = etag;
     }
 
-    @JsonProperty("id")
-    public String getId() {
-        return id;
+    @JsonProperty("nextSyncToken")
+    public String getNextSyncToken() {
+        return nextSyncToken;
     }
 
-    @JsonProperty("id")
-    public void setId(String id) {
-        this.id = id;
+    @JsonProperty("nextSyncToken")
+    public void setNextSyncToken(String nextSyncToken) {
+        this.nextSyncToken = nextSyncToken;
     }
 
-    @JsonProperty("selfLink")
-    public String getSelfLink() {
-        return selfLink;
+    @JsonProperty("items")
+    public List<Item> getItems() {
+        return items;
     }
 
-    @JsonProperty("selfLink")
-    public void setSelfLink(String selfLink) {
-        this.selfLink = selfLink;
-    }
-
-    @JsonProperty("role")
-    public String getRole() {
-        return role;
-    }
-
-    @JsonProperty("role")
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-    @JsonProperty("type")
-    public String getType() {
-        return type;
-    }
-
-    @JsonProperty("type")
-    public void setType(String type) {
-        this.type = type;
+    @JsonProperty("items")
+    public void setItems(List<Item> items) {
+        this.items = items;
     }
 
     @JsonAnyGetter

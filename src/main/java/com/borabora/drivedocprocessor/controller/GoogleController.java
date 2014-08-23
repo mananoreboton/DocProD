@@ -36,7 +36,8 @@ public class GoogleController {
             Item item = items.get(i);
             summaries.add(item.getSummary());
         }*/
-        String docdataFilter = "?q=title+contains+'source'";
+        String docdataFilter = "?maxResults=2";
+        //String docdataFilter = "";
         String docDataUri = "https://www.googleapis.com/drive/v2/files" + docdataFilter;
         String docInfo = googleRestTemplate.getForObject(docDataUri, String.class);
         ObjectMapper mapper = new ObjectMapper();

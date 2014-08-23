@@ -54,7 +54,7 @@ public class Oauth2Config {
         details.setPreEstablishedRedirectUri("http://localhost:8080/google");
         final ArrayList<String> scope = new ArrayList<String>();
         //scope.add("https://www.googleapis.com/auth/calendar");
-        scope.add("https://www.googleapis.com/auth/drive.file");
+        scope.add("https://www.googleapis.com/auth/drive");
         scope.add("https://www.googleapis.com/auth/userinfo.email");
         scope.add("https://www.googleapis.com/auth/userinfo.profile");
         details.setScope(scope);
