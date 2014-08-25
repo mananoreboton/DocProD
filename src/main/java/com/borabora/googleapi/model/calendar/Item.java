@@ -5,8 +5,6 @@ package com.borabora.googleapi.model.calendar;
  * Created by mananoreboton on 19/08/14.
  */
 
-import com.borabora.googgleapi.model.calendar.*;
-import com.borabora.googgleapi.model.calendar.NotificationSettings;
 import com.fasterxml.jackson.annotation.*;
 
 import javax.annotation.Generated;
@@ -58,9 +56,9 @@ public class Item {
     @JsonProperty("accessRole")
     private String accessRole;
     @JsonProperty("defaultReminders")
-    private List<com.borabora.googgleapi.model.calendar.DefaultReminder> defaultReminders = new ArrayList<com.borabora.googgleapi.model.calendar.DefaultReminder>();
+    private List<com.borabora.googleapi.model.calendar.DefaultReminder> defaultReminders = new ArrayList<com.borabora.googleapi.model.calendar.DefaultReminder>();
     @JsonProperty("notificationSettings")
-    private com.borabora.googgleapi.model.calendar.NotificationSettings notificationSettings;
+    private com.borabora.googleapi.model.calendar.NotificationSettings notificationSettings;
     @JsonProperty("primary")
     private Boolean primary;
     @JsonIgnore
@@ -177,17 +175,17 @@ public class Item {
     }
 
     @JsonProperty("defaultReminders")
-    public List<com.borabora.googgleapi.model.calendar.DefaultReminder> getDefaultReminders() {
+    public List<com.borabora.googleapi.model.calendar.DefaultReminder> getDefaultReminders() {
         return defaultReminders;
     }
 
     @JsonProperty("defaultReminders")
-    public void setDefaultReminders(List<com.borabora.googgleapi.model.calendar.DefaultReminder> defaultReminders) {
+    public void setDefaultReminders(List<com.borabora.googleapi.model.calendar.DefaultReminder> defaultReminders) {
         this.defaultReminders = defaultReminders;
     }
 
     @JsonProperty("notificationSettings")
-    public com.borabora.googgleapi.model.calendar.NotificationSettings getNotificationSettings() {
+    public com.borabora.googleapi.model.calendar.NotificationSettings getNotificationSettings() {
         return notificationSettings;
     }
 

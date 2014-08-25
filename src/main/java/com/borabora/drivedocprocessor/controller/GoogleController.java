@@ -22,9 +22,9 @@ public class GoogleController {
     @Autowired
     private RestOperations googleRestTemplate;
 
-    @RequestMapping("/google")
+    @RequestMapping("/flow")
     public String calendar(Map<String, Object> model) throws Exception {
-        final ArrayList<String> summaries = new ArrayList<String>();
+        final ArrayList<Item> docsInfo = new ArrayList<Item>();
 
         //String dataUri = "https://www.googleapis.com/calendar/v3/users/me/calendarList?minAccessRole=writer";
         //String info = googleRestTemplate.getForObject(dataUri, String.class);
@@ -34,22 +34,18 @@ public class GoogleController {
         final List<Item> items = calendarList.getItems();
         for (int i = 0; i < items.size(); i++) {
             Item item = items.get(i);
-            summaries.add(item.getSummary());
+            docsInfo.add(item.getSummary());
         }*/
-        String docdataFilter = "?maxResults=2";
+        String docdataFilter = "?maxResults=10";
         //String docdataFilter = "";
         String docDataUri = "https://www.googleapis.com/drive/v2/files" + docdataFilter;
         String docInfo = googleRestTemplate.getForObject(docDataUri, String.class);
         ObjectMapper mapper = new ObjectMapper();
         FileList calendarList = mapper.readValue(docInfo, FileList.class);
         List<Item> items = calendarList.getItems();
-        for (int i = 0; i < items.size(); i++) {
-            Item item = items.get(i);
-            summaries.add(item.getTitle());
-        }
-
-        model.put("summaries", summaries);
-        return "google";
+        final Item item = items.get(0);
+        model.put("docsInfo", items);
+        return "flow";
     }
 
     public void setGoogleRestTemplate(RestOperations googleRestTemplate) {
