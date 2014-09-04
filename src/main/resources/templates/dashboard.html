@@ -45,7 +45,7 @@
                     </a>
 
                     <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
-                        <form role="form" th:action="@{/dashboard}">
+                        <form role="form">
                             <div class="form-group form-group-sm">
                                 <label for="exampleInputEmail1">Email address</label>
 
@@ -81,40 +81,36 @@
 
 
 <div class="container">
-    <div class="jumbotron">
-        <h2>Retrieve data. Deliver information.</h2>
-
-        <p>Accelerate your tasks, take better decisions and keep your bussiness runing. e.i.  Dig your docs for relevant data and generate periodic reports.</p>
-        <p>Auto-generate proofs of employment and all kind of HR forms instantly. Much more.</p>
-        <p>
-            <a class="btn btn-lg btn-primary" href="/signin" role="button">Sign in &raquo;</a>
-        </p>
-    </div>
-    <div class="container">
-        <!-- Example row of columns -->
-        <div class="row">
-            <div class="col-md-4">
-                <h2>1 Define you inputs and outputs</h2>
-
-                <p>Which docs will provide data and how it will be shown.</p>
-
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            </div>
-            <div class="col-md-4">
-                <h2>2 Apply your bussiness rules</h2>
-
-                <p>Add filters and formaters to your dataflow. </p>
-
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            </div>
-            <div class="col-md-4">
-                <h2>3 Save and run your dataflow!</h2>
-
-                <p>Manage, edit and run them whenever you want.</p>
-
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            </div>
-        </div>
+    <h4 class="sub-header">Your flows</h4>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th> </th>
+                <th>Name</th>
+                <th>Input</th>
+                <th>Output</th>
+                <th> </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><button type="submit" class="btn btn-sm btn-default">Edit</button></td>
+                <td>Flow 1</td>
+                <td>Spreadsheet 1</td>
+                <td>Spreadsheet 3</td>
+                <td><button type="submit" class="btn btn-sm btn-primary">Run</button></td>
+            </tr>
+            <tr>
+                <td><button type="submit" class="btn btn-sm btn-default">Edit</button></td>
+                <td>Flow 2</td>
+                <td>Spreadsheet 2</td>
+                <td>Spreadsheet 4</td>
+                <td><button type="submit" class="btn btn-sm btn-primary">Run</button></td>
+            </tr>
+            </tbody>
+        </table>
+        <button type="submit" class="btn btn-info">Create new flow</button>
     </div>
 
     <hr />

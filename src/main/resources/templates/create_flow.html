@@ -45,7 +45,7 @@
                     </a>
 
                     <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
-                        <form role="form" th:action="@{/dashboard}">
+                        <form role="form">
                             <div class="form-group form-group-sm">
                                 <label for="exampleInputEmail1">Email address</label>
 
@@ -81,41 +81,64 @@
 
 
 <div class="container">
-    <div class="jumbotron">
-        <h2>Retrieve data. Deliver information.</h2>
+    <h4 class="sub-header">New flow</h4>
+    <br />
+    <form role="form">
+        <div class="form-group">
+            <label for="flowName">Name</label>
+            <input type="text" class="form-control" id="flowName" placeholder="Enter name"/>
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="flowName">Files</label>
 
-        <p>Accelerate your tasks, take better decisions and keep your bussiness runing. e.i.  Dig your docs for relevant data and generate periodic reports.</p>
-        <p>Auto-generate proofs of employment and all kind of HR forms instantly. Much more.</p>
-        <p>
-            <a class="btn btn-lg btn-primary" href="/signin" role="button">Sign in &raquo;</a>
-        </p>
-    </div>
-    <div class="container">
-        <!-- Example row of columns -->
-        <div class="row">
-            <div class="col-md-4">
-                <h2>1 Define you inputs and outputs</h2>
-
-                <p>Which docs will provide data and how it will be shown.</p>
-
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            </div>
-            <div class="col-md-4">
-                <h2>2 Apply your bussiness rules</h2>
-
-                <p>Add filters and formaters to your dataflow. </p>
-
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            </div>
-            <div class="col-md-4">
-                <h2>3 Save and run your dataflow!</h2>
-
-                <p>Manage, edit and run them whenever you want.</p>
-
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            <div class="table-responsive" id="filesTable">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Size</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <img src="">
+                        </td>
+                        <td>Spreadsheet 1</td>
+                        <td>XML</td>
+                        <td>3 Mb</td>
+                        <td>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default">Input</button>
+                                <button type="button" class="btn btn-default">Output</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="">
+                        </td>
+                        <td>Spreadsheet 1</td>
+                        <td>XML</td>
+                        <td>3 Mb</td>
+                        <td>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default">Input</button>
+                                <button type="button" class="btn btn-default">Output</button>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-    </div>
+
+        <button type="submit" class="btn btn-info">Next</button>
+    </form>
 
     <hr />
 

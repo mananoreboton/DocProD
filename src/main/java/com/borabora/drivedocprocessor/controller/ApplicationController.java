@@ -21,6 +21,21 @@ public class ApplicationController {
         return "home";
     }
 
+    @RequestMapping("/dashboard")
+    public String dashboard(Map<String, Object> model) {
+        return "dashboard";
+    }
+
+    @RequestMapping("/create_flow")
+    public String createFlow(Map<String, Object> model) {
+        return "create_flow";
+    }
+
+    @RequestMapping("/apply_rules")
+    public String applyRules(Map<String, Object> model) {
+        return "apply_rules";
+    }
+
     @RequestMapping("/foo")
     public String foo() {
         throw new RuntimeException("Expected exception in controller");

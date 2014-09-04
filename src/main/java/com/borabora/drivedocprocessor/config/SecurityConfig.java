@@ -23,13 +23,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
                 .logout()
-                .logoutSuccessUrl("/login")
+                .logoutSuccessUrl("/home")
                 .logoutUrl("/logout")
                 .permitAll()
                 .and()
                 .formLogin()
-                .loginPage("/login")
-                .failureUrl("/login?error=true")
+                .loginPage("/home")
+                .failureUrl("/home?error=true")
                 .permitAll();
     }
 

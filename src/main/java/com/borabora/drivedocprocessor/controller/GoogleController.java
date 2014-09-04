@@ -22,8 +22,8 @@ public class GoogleController {
     @Autowired
     private RestOperations googleRestTemplate;
 
-    @RequestMapping("/flow")
-    public String calendar(Map<String, Object> model) throws Exception {
+    @RequestMapping("/dashboard")
+    public String dashboard(Map<String, Object> model) throws Exception {
         final ArrayList<Item> docsInfo = new ArrayList<Item>();
 
         //String dataUri = "https://www.googleapis.com/calendar/v3/users/me/calendarList?minAccessRole=writer";
@@ -45,7 +45,7 @@ public class GoogleController {
         List<Item> items = calendarList.getItems();
         final Item item = items.get(0);
         model.put("docsInfo", items);
-        return "flow";
+        return "dashboard";
     }
 
     public void setGoogleRestTemplate(RestOperations googleRestTemplate) {
