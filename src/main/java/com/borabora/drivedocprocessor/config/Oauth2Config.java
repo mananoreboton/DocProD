@@ -31,6 +31,7 @@ public class Oauth2Config {
     @Bean
     @Scope(value = "session", proxyMode = ScopedProxyMode.INTERFACES)
     public OAuth2RestTemplate googleRestTemplate() {
+        //mod
         OAuth2RestTemplate template = new OAuth2RestTemplate(google(), new DefaultOAuth2ClientContext(accessTokenRequest));
 /*        MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
         converter.setSupportedMediaTypes(Arrays.asList(MediaType.APPLICATION_JSON, MediaType.valueOf("text/javascript")));
